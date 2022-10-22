@@ -1,6 +1,9 @@
-use actix_web::{post, HttpResponse, web};
+use actix_web::{post, HttpResponse};
+
+use crate::core::common::error::ErrorReponse;
+use crate::core::user::usecase::{create_new_user};
 
 #[post("/user")]
-pub async fn create_user(data: web::Data<Container>) -> HttpResponse {
-    HttpResponse::Created().body("User created with successul")
+pub async fn create_user() ->  Result<HttpResponse, ErrorReponse> {
+    let create_user_use_case =
 }
